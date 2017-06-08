@@ -14,7 +14,7 @@ public class Funcionario {
 					throw new IllegalArgumentException("Nome muito grande!");
 				}
 				if (salario < 350) {
-					throw new ViolacaoCltException("Salário baixo");
+					throw new ViolacaoCltException("Salário abaixo do mínimo");
 				}
 			} else {
 				this.nome = nome;
