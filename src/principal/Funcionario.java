@@ -47,19 +47,17 @@ public class Funcionario {
 	}
 
 	public void setSalario(double salario) {
-		if(salario>0){
-			try{
-				if(salario>(1.1*this.salario)){
-					throw new AumentoAbsurdoException("Aumento acima de 10% !");
-				}
-			} 
-			catch (AumentoAbsurdoException e) {
+		try {
+			if (salario < 350)
+				throw new ViolacaoCltException("Salário abaixo do mínimo");
+			if (salario > (1.1 * this.salario))
+				throw new AumentoAbsurdoException("Aumento acima de 10% !");
+		} catch (ViolacaoCltException e) {
 			e.getMessage();
 			e.printStackTrace();
-		}	
-		
-		
-	}
-	
+		} catch (AumentoAbsurdoException e) {
+			e.getMessage();
+			e.printStackTrace();
+		}
 	}
 }
