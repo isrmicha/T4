@@ -49,7 +49,7 @@ public class Funcionario {
 	public void setSalario(double salario) {
 		if(salario>0){
 			try{
-				if(salario>1.1*(this.salario)){
+				if(salario>(1.1*this.salario)){
 					throw new AumentoAbsurdoException("Aumento acima de 10% !");
 				}
 			} 
